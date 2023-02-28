@@ -164,6 +164,7 @@ namespace VistasSV.Controller
             catch(Exception ex) 
             {
                 MessageBox.Show(ex.ToString());
+                _connection.Close();
             }
             return detalleFacturas;
         }

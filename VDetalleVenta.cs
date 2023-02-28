@@ -35,15 +35,15 @@ namespace VistasSV
                 DGVDetalleVenta.DataSource = list;
                 DGVDetalleVenta.AutoResizeColumns();
             }
-            else 
+            else
 
             {
                 DGVDetalleVenta.DataSource = null;
                 MessageBox.Show("!NO EXISTE EL NUMERO DE FACTURA INTENTE DE NUEVO ¡");
             }
-            
+
         }
 
-        
+
     }
 }

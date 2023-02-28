@@ -12,18 +12,20 @@ namespace VistasSV.Controller
     {
         SqlConnection _connection = new(Conexion.Cadena);
           
-        public void CreateListProducts(int IdFactura, int IdProducto)
+        public void CreateListProducts(int IdFactura, int IdProducto,double Cantidad)
         {
             SqlConnection _connection = new(Conexion.Cadena);
-            string query = "insert into LISTA_PRODUCTO (IdFactura,IdProducto) values (@IdFactura,@IdProducto)";
+            string query = "insert into LISTA_PRODUCTO (IdFactura,IdProducto,Cantidad) values (@IdFactura,@IdProducto,@Cantidad)";
             SqlCommand command = new(query,_connection );
             command.CommandType =  CommandType.Text;
             _connection.Open();
             command.Parameters.Add("@IdFactura", SqlDbType.Int);
             command.Parameters.Add("@IdProducto", SqlDbType.Int);
+            command.Parameters.Add("@Cantidad", SqlDbType.Decimal);
 
             command.Parameters["@IdFactura"].Value = IdFactura;
-            command.Parameters["@IdProducto"].Value = IdProducto;   
+            command.Parameters["@IdProducto"].Value = IdProducto;
+            command.Parameters["@Cantidad"].Value = Cantidad;
             command.ExecuteNonQuery();  
             _connection.Close(); 
         }

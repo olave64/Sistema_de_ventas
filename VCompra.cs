@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +18,13 @@ namespace VistasSV
         ProductoController productoController = new();
         ProveedorController proveedorController = new();
         private readonly List<Producto> listProducto = new();
+        private readonly Usuario usuarioActivo;
 
         private double totalPagar;
 
-        public VCompra()
+        public VCompra(Usuario usuario)
         {
+            usuarioActivo = usuario;
             InitializeComponent();
             CreateDGVCompra();
             DGVCompra.AutoResizeColumns();

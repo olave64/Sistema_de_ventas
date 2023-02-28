@@ -86,7 +86,7 @@ namespace VistasSV
 
         private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AddForm(MCompras, new VCompra());
+            AddForm(MCompras, new VCompra(usuarioActual));
         }
     }
 }

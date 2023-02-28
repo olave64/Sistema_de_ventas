@@ -116,7 +116,7 @@ namespace VistasSV
             {
                 int IdFactura;
                 IdFactura = facturaController.CreateFactura(cliente.Id, usuarioActivo.Id,Convert.ToDouble (TbTotal.Text));
-                int idProducto = 0;
+                //int idProducto = 0;
                 int contadora = 1;
                 
                 foreach (DataGridViewRow item in DGVVenta.Rows)
@@ -124,8 +124,9 @@ namespace VistasSV
                     
                     if (contadora < DGVVenta.Rows.Count)
                     {
-                        idProducto = Convert.ToInt32(item.Cells[0].FormattedValue.ToString());
-                        listaProductosController.CreateListProducts(IdFactura, idProducto);
+                        int idProducto = Convert.ToInt32(item.Cells[0].FormattedValue.ToString());
+                        double cantidad = Convert.ToDouble(item.Cells[2].FormattedValue.ToString());
+                        listaProductosController.CreateListProducts(IdFactura, idProducto,cantidad);
                     }
                     contadora = contadora + 1;
                     

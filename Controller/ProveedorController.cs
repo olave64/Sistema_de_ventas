@@ -79,6 +79,40 @@ namespace VistasSV.Controller
             }
             return proveedors;
         }
+        public Proveedor GetProveedor(string NDocumento) 
+        {
+            Proveedor pro = new();
+            string query = "select * from PROVEEDOR where Documento = @NDocumento";
+            try
+            {
+                SqlCommand cmd = new(query, _connection)
+                {
+                    CommandType = CommandType.Text
+                };
+                _connection.Open();
+                cmd.Parameters.Add("@NDocumento", SqlDbType.VarChar);
+
+                cmd.Parameters["@NDocumento"].Value = NDocumento;
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    pro = new()
+                       {
+                           Id= Convert.ToInt32(reader[0]),
+                           Documento= reader[1].ToString(), 
+                           RazonSocial = reader[2].ToString(),  
+                           Correo= reader[3].ToString()
+                       };
+
+                }
+                _connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()); 
+            }
+            return pro;
+        }
         public void ActualizarProveedor(int id, string Documento, string RazonSocial, string Correo, string Telefono, bool Estado) 
         {
             string query = "update PROVEEDOR set Documento=@Documento, RazonSocial=@RazonSocial, Correo=@Correo, Telefono =@Telefono, Estado=@Estado where IdProveedor =@Id";

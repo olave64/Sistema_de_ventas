@@ -43,12 +43,12 @@
             TbTotalC = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            comboBox1 = new ComboBox();
-            numericUpDown1 = new NumericUpDown();
+            CbPC = new ComboBox();
+            NCantidad = new NumericUpDown();
             label9 = new Label();
             AddPCompra = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)DGVCompra).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NCantidad).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -211,20 +211,20 @@
             label8.TabIndex = 14;
             label8.Text = "Producto:";
             // 
-            // comboBox1
+            // CbPC
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(236, 34);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(198, 23);
-            comboBox1.TabIndex = 15;
+            CbPC.FormattingEnabled = true;
+            CbPC.Location = new Point(236, 34);
+            CbPC.Name = "CbPC";
+            CbPC.Size = new Size(198, 23);
+            CbPC.TabIndex = 15;
             // 
-            // numericUpDown1
+            // NCantidad
             // 
-            numericUpDown1.Location = new Point(481, 35);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(66, 23);
-            numericUpDown1.TabIndex = 16;
+            NCantidad.Location = new Point(481, 35);
+            NCantidad.Name = "NCantidad";
+            NCantidad.Size = new Size(66, 23);
+            NCantidad.TabIndex = 16;
             // 
             // label9
             // 
@@ -260,8 +260,8 @@
             ClientSize = new Size(861, 409);
             Controls.Add(AddPCompra);
             Controls.Add(label9);
-            Controls.Add(numericUpDown1);
-            Controls.Add(comboBox1);
+            Controls.Add(NCantidad);
+            Controls.Add(CbPC);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(TbTotalC);
@@ -280,7 +280,7 @@
             Name = "VCompra";
             Text = "Compra";
             ((System.ComponentModel.ISupportInitialize)DGVCompra).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NCantidad).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -302,8 +302,8 @@
         private TextBox TbTotalC;
         private Label label7;
         private Label label8;
-        private ComboBox comboBox1;
-        private NumericUpDown numericUpDown1;
+        private ComboBox CbPC;
+        private NumericUpDown NCantidad;
         private Label label9;
         private FontAwesome.Sharp.IconButton AddPCompra;
     }

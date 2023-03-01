@@ -59,7 +59,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(220, 59);
+            label2.Location = new Point(211, 34);
             label2.Name = "label2";
             label2.Size = new Size(79, 15);
             label2.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // TbBuscarVenta
             // 
-            TbBuscarVenta.Location = new Point(326, 56);
+            TbBuscarVenta.Location = new Point(317, 31);
             TbBuscarVenta.Name = "TbBuscarVenta";
             TbBuscarVenta.Size = new Size(198, 23);
             TbBuscarVenta.TabIndex = 2;
@@ -77,7 +77,7 @@
             DGVDetalleVenta.BackgroundColor = Color.DodgerBlue;
             DGVDetalleVenta.BorderStyle = BorderStyle.Fixed3D;
             DGVDetalleVenta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DGVDetalleVenta.Location = new Point(78, 123);
+            DGVDetalleVenta.Location = new Point(69, 98);
             DGVDetalleVenta.Name = "DGVDetalleVenta";
             DGVDetalleVenta.RowTemplate.Height = 25;
             DGVDetalleVenta.Size = new Size(653, 220);
@@ -91,7 +91,7 @@
             BuscarDV.IconColor = Color.DodgerBlue;
             BuscarDV.IconFont = FontAwesome.Sharp.IconFont.Auto;
             BuscarDV.IconSize = 30;
-            BuscarDV.Location = new Point(545, 49);
+            BuscarDV.Location = new Point(536, 24);
             BuscarDV.Name = "BuscarDV";
             BuscarDV.Size = new Size(42, 35);
             BuscarDV.TabIndex = 4;
@@ -103,7 +103,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ControlLightLight;
-            label3.Location = new Point(396, 364);
+            label3.Location = new Point(387, 339);
             label3.Name = "label3";
             label3.Size = new Size(77, 15);
             label3.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(491, 361);
+            textBox1.Location = new Point(482, 336);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(204, 23);
             textBox1.TabIndex = 6;
@@ -120,7 +120,7 @@
             // 
             LUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LUsuario.ForeColor = SystemColors.ControlLightLight;
-            LUsuario.Location = new Point(78, 89);
+            LUsuario.Location = new Point(69, 64);
             LUsuario.Name = "LUsuario";
             LUsuario.Size = new Size(56, 23);
             LUsuario.TabIndex = 7;
@@ -130,7 +130,7 @@
             // 
             LCliente.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LCliente.ForeColor = SystemColors.ControlLightLight;
-            LCliente.Location = new Point(396, 88);
+            LCliente.Location = new Point(387, 63);
             LCliente.Name = "LCliente";
             LCliente.Size = new Size(56, 23);
             LCliente.TabIndex = 8;
@@ -140,7 +140,7 @@
             // 
             LVUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LVUsuario.ForeColor = SystemColors.ControlLightLight;
-            LVUsuario.Location = new Point(141, 88);
+            LVUsuario.Location = new Point(132, 63);
             LVUsuario.Name = "LVUsuario";
             LVUsuario.Size = new Size(249, 23);
             LVUsuario.TabIndex = 9;
@@ -149,7 +149,7 @@
             // 
             LVCliente.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             LVCliente.ForeColor = SystemColors.ControlLightLight;
-            LVCliente.Location = new Point(458, 88);
+            LVCliente.Location = new Point(449, 63);
             LVCliente.Name = "LVCliente";
             LVCliente.Size = new Size(273, 23);
             LVCliente.TabIndex = 10;
@@ -159,7 +159,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DodgerBlue;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 464);
             Controls.Add(LVCliente);
             Controls.Add(LVUsuario);
             Controls.Add(LCliente);

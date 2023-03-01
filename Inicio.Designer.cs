@@ -196,15 +196,16 @@
             // registrarToolStripMenuItem1
             // 
             registrarToolStripMenuItem1.Name = "registrarToolStripMenuItem1";
-            registrarToolStripMenuItem1.Size = new Size(180, 22);
+            registrarToolStripMenuItem1.Size = new Size(176, 22);
             registrarToolStripMenuItem1.Text = "Registrar";
             registrarToolStripMenuItem1.Click += registrarToolStripMenuItem1_Click;
             // 
             // detalleDeCompraToolStripMenuItem
             // 
             detalleDeCompraToolStripMenuItem.Name = "detalleDeCompraToolStripMenuItem";
-            detalleDeCompraToolStripMenuItem.Size = new Size(180, 22);
+            detalleDeCompraToolStripMenuItem.Size = new Size(176, 22);
             detalleDeCompraToolStripMenuItem.Text = "Detalle de compra";
+            detalleDeCompraToolStripMenuItem.Click += detalleDeCompraToolStripMenuItem_Click;
             // 
             // MClientes
             // 
@@ -264,14 +265,14 @@
             ContenedorInicio.BackgroundImage = (Image)resources.GetObject("ContenedorInicio.BackgroundImage");
             ContenedorInicio.Location = new Point(3, 133);
             ContenedorInicio.Name = "ContenedorInicio";
-            ContenedorInicio.Size = new Size(898, 392);
+            ContenedorInicio.Size = new Size(898, 453);
             ContenedorInicio.TabIndex = 2;
             // 
             // Inicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(898, 526);
+            ClientSize = new Size(898, 586);
             Controls.Add(ContenedorInicio);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);

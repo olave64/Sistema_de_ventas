@@ -36,10 +36,10 @@
             label3 = new Label();
             TbCorreoC = new TextBox();
             label4 = new Label();
-            iconButton1 = new FontAwesome.Sharp.IconButton();
+            BtnBuscarP = new FontAwesome.Sharp.IconButton();
             label5 = new Label();
             label6 = new Label();
-            iconButton2 = new FontAwesome.Sharp.IconButton();
+            BtnCompra = new FontAwesome.Sharp.IconButton();
             TbTotalC = new TextBox();
             label7 = new Label();
             label8 = new Label();
@@ -126,23 +126,24 @@
             label4.TabIndex = 6;
             label4.Text = "Correo";
             // 
-            // iconButton1
+            // BtnBuscarP
             // 
-            iconButton1.BackColor = Color.DodgerBlue;
-            iconButton1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton1.ForeColor = SystemColors.ControlLightLight;
-            iconButton1.IconChar = FontAwesome.Sharp.IconChar.SearchPlus;
-            iconButton1.IconColor = SystemColors.ControlLightLight;
-            iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton1.IconSize = 40;
-            iconButton1.ImageAlign = ContentAlignment.MiddleRight;
-            iconButton1.Location = new Point(643, 240);
-            iconButton1.Name = "iconButton1";
-            iconButton1.Size = new Size(185, 44);
-            iconButton1.TabIndex = 8;
-            iconButton1.Text = "Buscar Proveedor";
-            iconButton1.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton1.UseVisualStyleBackColor = false;
+            BtnBuscarP.BackColor = Color.DodgerBlue;
+            BtnBuscarP.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnBuscarP.ForeColor = SystemColors.ControlLightLight;
+            BtnBuscarP.IconChar = FontAwesome.Sharp.IconChar.SearchPlus;
+            BtnBuscarP.IconColor = SystemColors.ControlLightLight;
+            BtnBuscarP.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnBuscarP.IconSize = 40;
+            BtnBuscarP.ImageAlign = ContentAlignment.MiddleRight;
+            BtnBuscarP.Location = new Point(643, 240);
+            BtnBuscarP.Name = "BtnBuscarP";
+            BtnBuscarP.Size = new Size(185, 44);
+            BtnBuscarP.TabIndex = 8;
+            BtnBuscarP.Text = "Buscar Proveedor";
+            BtnBuscarP.TextAlign = ContentAlignment.MiddleLeft;
+            BtnBuscarP.UseVisualStyleBackColor = false;
+            BtnBuscarP.Click += BtnBuscarP_Click;
             // 
             // label5
             // 
@@ -164,23 +165,24 @@
             label6.TabIndex = 10;
             label6.Text = "Proveedor";
             // 
-            // iconButton2
+            // BtnCompra
             // 
-            iconButton2.BackColor = Color.DodgerBlue;
-            iconButton2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            iconButton2.ForeColor = SystemColors.ControlLightLight;
-            iconButton2.IconChar = FontAwesome.Sharp.IconChar.CartArrowDown;
-            iconButton2.IconColor = SystemColors.ControlLightLight;
-            iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton2.IconSize = 40;
-            iconButton2.ImageAlign = ContentAlignment.MiddleRight;
-            iconButton2.Location = new Point(643, 307);
-            iconButton2.Name = "iconButton2";
-            iconButton2.Size = new Size(185, 44);
-            iconButton2.TabIndex = 11;
-            iconButton2.Text = "Comprar";
-            iconButton2.TextAlign = ContentAlignment.MiddleLeft;
-            iconButton2.UseVisualStyleBackColor = false;
+            BtnCompra.BackColor = Color.DodgerBlue;
+            BtnCompra.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            BtnCompra.ForeColor = SystemColors.ControlLightLight;
+            BtnCompra.IconChar = FontAwesome.Sharp.IconChar.CartArrowDown;
+            BtnCompra.IconColor = SystemColors.ControlLightLight;
+            BtnCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            BtnCompra.IconSize = 40;
+            BtnCompra.ImageAlign = ContentAlignment.MiddleRight;
+            BtnCompra.Location = new Point(643, 307);
+            BtnCompra.Name = "BtnCompra";
+            BtnCompra.Size = new Size(185, 44);
+            BtnCompra.TabIndex = 11;
+            BtnCompra.Text = "Comprar";
+            BtnCompra.TextAlign = ContentAlignment.MiddleLeft;
+            BtnCompra.UseVisualStyleBackColor = false;
+            BtnCompra.Click += BtnCompra_Click;
             // 
             // TbTotalC
             // 
@@ -251,6 +253,7 @@
             AddPCompra.Size = new Size(37, 27);
             AddPCompra.TabIndex = 18;
             AddPCompra.UseVisualStyleBackColor = false;
+            AddPCompra.Click += AddPCompra_Click_1;
             // 
             // VCompra
             // 
@@ -265,10 +268,10 @@
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(TbTotalC);
-            Controls.Add(iconButton2);
+            Controls.Add(BtnCompra);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(iconButton1);
+            Controls.Add(BtnBuscarP);
             Controls.Add(TbCorreoC);
             Controls.Add(label4);
             Controls.Add(TbRazonC);
@@ -279,6 +282,7 @@
             Controls.Add(label1);
             Name = "VCompra";
             Text = "Compra";
+            Load += VCompra_Load;
             ((System.ComponentModel.ISupportInitialize)DGVCompra).EndInit();
             ((System.ComponentModel.ISupportInitialize)NCantidad).EndInit();
             ResumeLayout(false);
@@ -295,7 +299,7 @@
         private Label label3;
         private TextBox TbCorreoC;
         private Label label4;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton BtnBuscarP;
         private Label label5;
         private Label label6;
         private FontAwesome.Sharp.IconButton iconButton2;
@@ -306,5 +310,6 @@
         private NumericUpDown NCantidad;
         private Label label9;
         private FontAwesome.Sharp.IconButton AddPCompra;
+        private FontAwesome.Sharp.IconButton BtnCompra;
     }
 }

@@ -88,5 +88,10 @@ namespace VistasSV
         {
             AddForm(MCompras, new VCompra(usuarioActual));
         }
+
+        private void detalleDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddForm(MCompras, new VDetalleCompra());
+        }
     }
 }

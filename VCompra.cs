@@ -17,8 +17,12 @@ namespace VistasSV
     {
         ProductoController productoController = new();
         ProveedorController proveedorController = new();
+        CompraController compraController = new();
+        ListaProductosController lista = new();
         private readonly List<Producto> listProducto = new();
         private readonly Usuario usuarioActivo;
+        private Proveedor proveedor = new();
+
 
         private double totalPagar;
 
@@ -26,10 +30,14 @@ namespace VistasSV
         {
             usuarioActivo = usuario;
             InitializeComponent();
+            
+
+        }
+        private void VCompra_Load(object sender, EventArgs e)
+        {
             CreateDGVCompra();
             DGVCompra.AutoResizeColumns();
             DatosCB();
-
         }
         private void CreateDGVCompra()
         {
@@ -79,21 +87,75 @@ namespace VistasSV
             ActualizarListaProducto();
         }
 
-        private void BuscarP_Click(object sender, EventArgs e)
+        private void AddPCompra_Click_1(object sender, EventArgs e)
         {
+            Producto producto = productoController.FindProducto(CbPC.Text);
+            listProducto.Add(producto);
 
-            Proveedor miProveedor = proveedorController.GetProveedor(TbDocumentoC.Text);
-            if (miProveedor.Documento != null)
+            try
             {
-                TbRazonC.Text = miProveedor.RazonSocial;
-                TbCorreoC.Text = miProveedor.Correo;
+                if (NCantidad.Value > 0)
+                {
+                    double total = producto.PrecioCompra * Convert.ToDouble(NCantidad.Value);
+                    totalPagar += total;
+                    TbTotalC.Text = totalPagar.ToString();
+                    DGVCompra.Rows.Add(producto.Id, producto.Nombre, Convert.ToInt32(NCantidad.Value), producto.PrecioCompra, total);
+                }
+                else
+                {
+                    MessageBox.Show("EL CAMPO CANTIDAD DEBE CONTENER UNA CANTIDAD");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("EL FORMATO DE CANTIDAD DEVE SER NUMERICO" + ex.ToString());
+            }
+        }
+
+        private void BtnCompra_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int IdCompra;
+                IdCompra = compraController.CrearCompra(usuarioActivo.Id, proveedor.Id, Convert.ToDouble(TbTotalC.Text));
+                //int idProducto = 0;
+                int contadora = 1;
+
+                foreach (DataGridViewRow item in DGVCompra.Rows)
+                {
+
+                    if (contadora < DGVCompra.Rows.Count)
+                    {
+                        int idProducto = Convert.ToInt32(item.Cells[0].FormattedValue.ToString());
+                        double cantidad = Convert.ToDouble(item.Cells[2].FormattedValue.ToString());
+                        lista.CreateListProductsCompra(IdCompra, idProducto, cantidad);
+                    }
+                    contadora = contadora + 1;
+
+                }
+                MessageBox.Show("COMPRA REALIZADA CORRECTAMENTE");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BtnBuscarP_Click(object sender, EventArgs e)
+        {
+            proveedor = proveedorController.GetProveedor(TbDocumentoC.Text);
+            if (proveedor.Documento != null)
+            {
+                TbRazonC.Text = proveedor.RazonSocial;
+                TbCorreoC.Text = proveedor.Correo;
             }
             else
             {
                 MessageBox.Show("provedor no encontrado");
                 MessageBox.Show("jjjjjjj");
             }
-
         }
     }
 }

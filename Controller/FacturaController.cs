@@ -116,8 +116,6 @@ namespace VistasSV.Controller
                 sql.Parameters["@IdUsuario"].Value = IdUsuario;
                 sql.Parameters["@TotalPagar"].Value = TotalPagar;
 
-                
-                
                 Id = Convert.ToInt32(sql.ExecuteScalar());
 
                 _connection.Close();
